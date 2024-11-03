@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Mission</title>
+    <title>LFR</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="../img/product.png">
+    <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         .main-container {
             padding: 2rem;
@@ -13,7 +15,7 @@
 
         .mission-box {
             background-color: #f1d503;
-            color: white;
+            color: black;
             padding: 1rem;
             border-radius: 8px;
             cursor: pointer;
@@ -41,7 +43,7 @@
         }
 
         .modal-content {
-            background-color: #c7c4c4;
+            background-color: #F3F4EE;
             padding: 2rem;
             border-radius: 8px;
             max-width: 600px;
@@ -56,25 +58,6 @@
             align-items: center;
         }
 
-        .modal-header h2 {
-            margin: 0;
-        }
-
-        .close-btn {
-            background: #f1d503;
-            border: none;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
-
-        .close-btn:hover {
-            background-color: #c9a600;
-        }
-
         .mission-image {
             width: 100%;
             height: auto;
@@ -86,60 +69,26 @@
         }
 
         .input-container {
-            margin-bottom: 1rem;
             display: flex;
-            flex-direction: column; /* Stack children vertically */
-            align-items: flex-start; /* Align items to the start */
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .input-container label {
             font-size: 0.9rem;
             color: #555;
-            margin-bottom: 0.5rem; /* Space between label and value */
+            margin-bottom: 0.5rem;
         }
 
         .input-container p {
             margin: 0;
             font-size: 1rem;
-            white-space: pre-wrap; /* Allows text to wrap properly */
-            word-wrap: break-word; /* Break long words if needed */
+            white-space: pre-wrap;
+            word-wrap: break-word;
             background-color: white;
             border-radius: 8px;
             text-align: left;
 
-        }
-
-        .footer {
-            display: flex;
-            background-color: #f1d503;
-            padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
-            justify-content: space-between; /* Space between items */
-            align-items: center; /* Align items vertically centered */
-        }
-
-        .footer .footer-btn {
-            background-color: #c9302c;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            margin: 0 0.5rem;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .footer .footer-btn:hover {
-            background-color: #8c211e;
-        }
-
-        .footer p {
-            margin: 0;
-            font-size: 1rem;
         }
 
     </style>
@@ -147,7 +96,7 @@
 <body>
     <div class="main-container">
         <h2>Daily Mission</h2>
-        <p>Here are the available missions for today:</p>
+        <div style="text-align: center;">Here are the available missions for today:</div>
         
         <!-- Sample Mission Boxes -->
         <div class="mission-box" onclick="showMissionInfo('mission1')">
@@ -190,13 +139,15 @@
     <div class="footer">
         <div class="footer-btn" onclick="navigateTo('main-page.html')">
             Back to Main Page
+            <img src="../img/home.png" alt="go back to main page picture" style="width: 17px; height: 17px;">
         </div>
-        <p>SiKumarn</p>
+        <footer >
+            <p>LFR</p>
+        </footer>
     </div>
 
     <script>
         function showMissionInfo(missionId) {
-            // Sample mission data
             const missions = {
                 mission1: {
                     title: 'Mission 1',
@@ -210,14 +161,14 @@
                     image: '../img/jacket.jpg',
                     bounty: '$200',
                     category: 'Clothing',
-                    description: 'I cannot find my jacket last seen in room 1612'
+                    description: 'I cannot find my jacket, last seen in room 1612'
                 },
                 mission3: {
                     title: 'Mission 3',
                     image: '../img/book.jpg',
                     bounty: '$10',
                     category: 'STATIONARY',
-                    description: 'Can you guys help me finding Math book'
+                    description: 'Can you guys help me find Mathematics book'
                 }
             };
 

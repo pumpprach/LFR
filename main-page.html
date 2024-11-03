@@ -3,44 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>LFR</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="../img/product.png">
+    <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
          .header {
             display: flex;
             justify-content: flex-start;
-            align-items: center;
-            padding: 1rem;
+            padding: 2rem;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 100;
-        }
 
-        .header .header-btn {
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            margin-right: auto;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-            background-color: #f1d503;
-        }
+            .header-btn {
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                text-align: center;
+                font-size: 1.1rem;
+                align-items: center;
+                transition: background-color 0.3s ease;
+                background-color: #f1d503;
+                color: #000000;
+            }
 
-        .header .header-btn:hover {
+            .header-btn:hover {
             background-color: #c9a600;
         }
-        /* Additional styles for modals and buttons */
+        }
+
         .main-container {
             padding: 2rem;
+            max-width: 500px;
         }
 
         .request-box, .additional-box {
             background-color: #f1d503;
-            color: white;
             padding: 1rem;
             border-radius: 8px;
             cursor: pointer;
@@ -68,7 +69,7 @@
         }
 
         .modal-content {
-            background-color: white;
+            background-color: #F3F4EE;
             padding: 2rem;
             border-radius: 8px;
             max-width: 600px;
@@ -82,31 +83,19 @@
             align-items: center;
         }
 
-        .modal-header h2 {
-            margin: 0;
+        .formContent{
+            background-color: #F3F4EE;
         }
 
-        .close-btn {
-            background: #f1d503;
-            border: none;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
 
-        .close-btn:hover {
-            background-color: #c9a600;
-        }
 
-        /* option .main-container */
+
         .option-container {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
+        
         .option-btn {
             color: #f4f3ea;
             padding: 1.5rem;
@@ -122,19 +111,13 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background-color: #86A21F;
+
         }
-        .option-btn.dark-blue{
-            background-color: #2ca1b3;
+        .option-btn:hover{
+            background-color: #3F8954;
         }
-        .option-btn.dark-blue:hover{
-            background-color: #1f7380;
-        }
-        .option-btn.purple{
-            background-color: #f68080;
-        }
-        .option-btn.purple:hover{
-            background-color: #ac5959;
-        }
+
         .smallest {
             font-size: 0.8rem; 
             color: #f4f3ea;
@@ -142,29 +125,27 @@
             white-space: pre-line;
             text-align: left;
         }
-        
+
+        /* input-container Styles */
         .input-container {
-            margin-bottom: 1rem;
-        }
 
-        .input-container label {
-            display: block;
-            font-size: 0.9rem;
-            color: #555;
-        }
+            label{
+                display: block;
+                font-size: 0.9rem;
+            }
 
-        .input-container input, .input-container textarea, .input-container select {
-            width: 100%;
-            padding: 0.75rem;
-            margin-top: 0.5rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
+            input, textarea, select{
+                width: 100%;
+                padding: 0.75rem;
+                margin-top: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 1rem;
+            }
 
-        .input-container input[type="file"] {
-            padding: 0.5rem;
-            border: 1px solid #2ca1b3;
+            input[type="file"] {
+                padding: 0.5rem;
+            }
         }
 
         .submit-btn, .back-btn {
@@ -175,71 +156,8 @@
             font-size: 1rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            background-color: #FF9F24;
         }
-
-        .back-btn {
-            background-color: #c9302c;
-            color: black;
-            margin-top: 1rem;
-        }
-
-        .back-btn:hover {
-            background-color: #8c211e;
-        }
-
-        /* Footer Styles */
-        .footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #f1d503;
-            padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .footer .footer-btn {
-            color: black;
-            padding: 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .footer .footer-btn:hover {
-            background-color: #c9a600;
-        }
-
-        .footer .footer-btn.logout {
-            background-color: #c9302c;
-        }
-        .footer .footer-btn.logout:hover {
-            background-color: #8c211e;
-        }
-        .footer .footer-btn.blue {
-            background-color: #a3d2f9;
-        }
-        .footer .footer-btn.blue:hover {
-            background-color: #7293AE;
-        }
-        .footer .footer-btn.pink {
-            background-color: #ffaba0;
-        }
-        .footer .footer-btn.pink:hover {
-            background-color: #cc8880;
-        }
-
-        /* Container for center buttons */
-        .footer-center {
-            display: flex;
-            gap: 1rem;
-            
-        }
-
 
     </style>
 </head>
@@ -248,7 +166,8 @@
         <!-- Header -->
         <div class="header">
             <div class="header-btn" onclick="navigateTo('settings-page.html')">
-            Settings
+                <p1>Setting</p1>
+                <img class="move" src="../img/settings.png" alt="settings picture" style="width: 14px; height: 14px;">
             </div>
         </div>
 
@@ -257,7 +176,7 @@
         <p style="text-align: center;">This website will help who has lost item find their lost item more easily.</p>
         
         <div class="request-box" onclick="openChoiceModal()">
-            Lost? Found? Request?
+            Lost or Found or Request
         </div>
 
         <!-- Choice Modal -->
@@ -291,9 +210,9 @@
         <div class="modal" id="formModal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 id="formTitle">Submit Request</h2><br><br>
-                    <button class="close-btn" onclick="closeFormModal()">&times;</button>
-                </div>
+                    <h2 id="formTitle">Submit Request</h2>
+                    <button class="close-btn" onclick="backToChoice()">&times;</button>
+                </div><br>
                 <form id="formContent" enctype="multipart/form-data">
                     <div class="input-container">
                         <label for="category">Category</label>
@@ -310,7 +229,7 @@
                     </div>
                     <div class="input-container">
                         <label for="item">Item</label>
-                        <input type="text" id="item" name="item" required>
+                        <input type="item" id="item" name="item" required>
                     </div>
                     <div class="input-container">
                         <label for="description">Description</label>
@@ -318,10 +237,9 @@
                     </div>
                     <div class="input-container">
                         <label for="picture">Upload Picture</label>
-                        <input type="file" id="picture" name="picture" accept="image/*">
+                        <input type="file" id="image-input"accept="image/*">
                     </div>
                     <button type="submit" class="submit-btn">Submit Request</button>
-                    <button type="button" class="back-btn" onclick="backToChoice()">Back</button>
                 </form>
             </div>
         </div>
@@ -331,6 +249,7 @@
     <div class="footer">
         <div class="footer-btn logout" onclick="navigateTo('Logout.html')">
             Logout
+            <img src="../img/logout.png" alt="logout picture" style="width: 12px; height: 12px;">
         </div>
         <div class="footer-center">
             <div class="footer-btn blue" onclick="navigateTo('your-updates.html')">
@@ -340,8 +259,9 @@
                 Dariy Mission
             </div>
         </div>
-        <p>SiKumarn</p>
-    </a>
+        <footer>
+            <p>LFR</p>
+        </footer>
     </div>
 
 
@@ -359,45 +279,34 @@
     let title = '';
     let formAction = '';
     let color = '';
-    let color_title = '';
+    let color_title = '#6F5335';
 
     switch(action) {
         case 'lost':
             title = 'Lost Item';
             formAction = 'report_lost_item';
-            color = '#8ceac5';
-            color_title = '#6f5335'
+            color = '#3F8954';
             break;
         case 'found':
             title = 'Found Item';
             formAction = 'report_found_item';
             color = '#891956';
-            color_title = '#6f5335'
-
             break;
         case 'request':
             title = 'Request Item';
             formAction = 'request_item';
-            color = '#8ceac5';
-            color_title = '#6f5335'
-
+            color = '#3F8954';
             break;
     }
 
-    // Update the form title and form action
     document.getElementById('formTitle').innerText = title;
     document.getElementById('formContent').setAttribute('action', formAction);
 
-    // Change the color of the title and buttons
     document.getElementById('formTitle').style.color = color_title; 
-    document.querySelector('.close-btn').style.backgroundColor = color;
-    document.querySelector('.submit-btn').style.backgroundColor = color;
     document.querySelector('label[for="category"]').style.color = color;
     document.querySelector('label[for="item"]').style.color = color;
     document.querySelector('label[for="description"]').style.color = color;
 
-
-    // Show the modal
     document.getElementById('formModal').style.display = 'flex';
 }
 
@@ -407,8 +316,8 @@
         }
 
         function backToChoice() {
-            closeFormModal(); // Close the form modal
-            openChoiceModal(); // Reopen the choice modal
+            closeFormModal();
+            openChoiceModal();
         }
 
         function navigateTo(page) {
@@ -416,13 +325,10 @@
         }
 
         document.getElementById('formContent').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            // Handle form submission logic here (e.g., send data to server)
+            event.preventDefault();
             
-            // Simulate form submission success and redirect to main page
             alert('Request submitted successfully!');
-            closeFormModal(); // Close the form modal
-            // Redirect to main page
+            closeFormModal();
             window.location.href = 'main-page.html';
         });
 

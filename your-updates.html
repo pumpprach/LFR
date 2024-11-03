@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Found Items</title>
+    <title>LFR</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="../img/product.png">
+    <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-
-        .found-items-container {
-            padding: 2rem;
-        }
 
         .found-item {
             background-color: #f1d503;
-            color: white;
+            color: black;
             padding: 1rem;
             border-radius: 8px;
             margin-bottom: 1rem;
@@ -22,14 +20,14 @@
             align-items: center;
             cursor: pointer;
             transition: background-color 0.3s ease;
-        }
 
-        .found-item img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-right: 1rem;
+            img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-right: 1rem;
+            }
         }
 
         .item-title {
@@ -42,49 +40,16 @@
             margin-bottom: 0.25rem;
         }
 
-        .footer {
-            display: flex;
-            background-color: #f1d503;
-            padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
-            justify-content: space-between;
-            align-items: center;
-        }
+            .footer-btn:hover {
+                background-color: #c9a600;
+            }
 
-        .footer .footer-btn {
-            background-color: #c9302c;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            margin: 0 0.5rem;
-            font-size: 1.1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .footer .footer-btn:hover {
-            background-color: #8c211e;
-        }
-
-        .footer p {
-            margin: 0;
-            font-size: 1rem;
-        }
-
-        h{
-            white-space: pre-line;
-            font-size: small;
-        }
     </style>
 </head>
 <body>
     <div class="main-container found-items-container">
         <h2>Your updated</h2>
-        <h>Anonymous :
+        <h style="white-space: pre-line;">Anonymous :
             OMG, I found this Apple Watch in room 1403!!</h><br><br>
 
         <div class="found-item" onclick="showItemDetails('item1')">
@@ -101,9 +66,12 @@
     <div class="footer">
         <div class="footer-btn" onclick="navigateTo('main-page.html')">
             Back to Main Page
-        </div>
-        <p>SiKumarn</p>
+            <img src="../img/home.png" alt="go back to main page picture" style="width: 17px; height: 17px;">
 
+        </div>
+        <footer>
+            <p>LFR</p>
+        </footer>
     </div>
     
 
